@@ -4,6 +4,12 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "lint": "npm-run-all --parallel lint:*",
+    "lint:ts": "next lint",
+    "lint:css": "npm exec stylelint \"**/*.{css,scss}\"",
+    "format:css": "npm exec stylelint \"**/*.{css,scss}\" --fix",
+    "format:ts": "next lint --fix",
+    "format": "npm-run-all --parallel format:*",
     "type-check": "tsc"
   },
   "dependencies": {
@@ -12,9 +18,25 @@
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
+    "@eslint/css": "^0.8.1",
+    "@eslint/js": "^9.27.0",
+    "@eslint/json": "^0.12.0",
+    "@eslint/markdown": "^6.4.0",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/react": "^16.3.0",
     "@types/node": "^22.15.26",
     "@types/react": "^19.1.6",
     "@types/react-dom": "^19.1.5",
-    "typescript": "^5.8.3"
+    "eslint": "^9.27.0",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^16.2.0",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.89.0",
+    "stylelint": "^16.20.0",
+    "stylelint-config-css-modules": "^4.4.0",
+    "stylelint-config-standard": "^38.0.0",
+    "stylelint-scss": "^6.12.0",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.33.0"
   }
 }
