@@ -1,0 +1,21 @@
+.carList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  
+    &__make {
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 8px;
+    }
+  
+    &__makeTitle {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+  
+    &__families {
+      display: flex;
+      flex-direction: column;
+    }
+}

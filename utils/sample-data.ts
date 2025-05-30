@@ -41,7 +41,8 @@ export const sampleUserData: Car[] = [
           },
           {
             "baseVariantImages": [
-              "https://images.drive.com.au/image/upload/c_fill,f_auto,h_510,q_auto:good,w_890/vehicles/redbook/AUVABAR2023AEAA/S000ARFB"
+              "https://images.drive.com.au/image/upload/c_fill,f_auto,h_510,q_auto:good,w_890/vehicles/redbook/AUVABAR2023AEAA/S000ARFB",
+              "https://images.drive.com.au/image/upload/c_fill,f_auto,h_510,q_auto:good,w_890/vehicles/redbook/AUVALFA2023AEAA/S000BHS4"
             ],
             "slug": "695",
             "title": "695",

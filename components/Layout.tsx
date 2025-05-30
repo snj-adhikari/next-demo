@@ -6,11 +6,12 @@ import { useRouter } from 'next/router'
 type Props = {
   children?: ReactNode
   title?: string
+  carUri?: string
 }
 
-const Layout = ({ children, title = 'This is the default title' }: Props) => {
+const Layout = ({ children, title = 'This is the default title', carUri = 'cars' }: Props) => {
   const router = useRouter()
-
+  const carPath = `/${carUri}`
   return (
     <div>
       <Head>
@@ -22,9 +23,9 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => {
         <nav>
           <Link className={router?.pathname === '/' ? 'current' : undefined} href="/">Home</Link>
           <Link className={router?.pathname === '/about' ? 'current' : undefined} href="/about">About</Link>
-          <Link className={router?.pathname === '/cars' ? 'current' : undefined} href="/cars">cars List</Link>
-          <Link href="/api/cars">cars API</Link>
-          <Link href="/api/page">pageinfo API</Link>
+          <Link className={router?.pathname === carPath ? 'current' : undefined} href={carPath}>Cars</Link>
+          <Link href="/api/cars" target='_blank'>Cars API</Link>
+          <Link href="/api/page" target='_blank'>Page Info API</Link>
         </nav>
       </header>
       <div className='layout'>

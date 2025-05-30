@@ -1,0 +1,57 @@
+.layout,
+footer {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: #0070f3;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+header {
+  background: black;
+  padding: 0 20px;
+
+  > nav {
+    max-width: 1440px;
+    margin: 0 auto;
+
+    > a {
+      padding: 20px 15px;
+      display: inline-block;
+      color: white;
+
+      &.current {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.page-info {
+  position: relative;
+
+  &::before {
+    content: '';
+    width: 60%;
+    position: absolute;
+    height: 5px;
+    background: #d9d9d9;
+    bottom: -10px;
+  }
+}

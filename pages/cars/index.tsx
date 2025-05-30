@@ -1,8 +1,7 @@
 import { GetServerSideProps, GetServerSidePropsContext } from 'next'
-
 import { Car, PageData } from '../../interfaces'
 import Layout from '../../components/Layout'
-import { PageTemplate } from '../../components/template'
+import { PageTemplate } from '../../components/PageTemplate'
 
 type Props = {
   cars: Car[]
@@ -10,27 +9,32 @@ type Props = {
 }
 
 const WithServerSideProps = ({ cars, pageInfo }: Props) => {
-  console.log({cars, pageInfo})
-  
+  const { title: carTitle = 'Cars List', uri: carUri = 'cars' } = pageInfo || {};
   return (
-
-    <Layout title="Users List | Next.js + TypeScript Example">
+    <Layout title={carTitle +"| Next.js + TypeScript Example"} carUri={carUri}>
       <PageTemplate cars={cars} pageInfo={pageInfo}/>
     </Layout>
   )
 }
 
 export const getServerSideProps: GetServerSideProps = async (ctx: GetServerSidePropsContext) => {
+  try {
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+    const carsResponse = await fetch(`${baseUrl}/api/cars`);
+    const pageResponse = await fetch(`${baseUrl}/api/page`);
 
-  // Example for including serverSide props in a Next.js function component page.
-  // Don't forget to include the respective types for any props passed into
-  // the component.
+    if (!carsResponse.ok || !pageResponse.ok) {
+      throw new Error('Failed to fetch data');
+    }
 
-  // Fetch pageInfo and Cars Data via api and pass that to client
+    const carsData: Car[] = await carsResponse.json();
+    const pageInfo: PageData = await pageResponse.json();
 
-  const cars = []
-  const page = {}
-  return { props: { cars, pageInfo: page } }
+    return { props: { cars: carsData, pageInfo: pageInfo } };
+  } catch (error) {
+    console.error("Error fetching data in getServerSideProps:", error);
+    return { props: { cars: [], pageInfo: null } };
+  }
 }
 
 export default WithServerSideProps
