@@ -1,19 +1,52 @@
 .carList {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: rem(20);
-  
-    &__make {
-      padding: rem(15);
-    }
-  
-    &__makeTitle {
-      font-size: 1.5rem;
-      margin-bottom: rem(10);
-    }
-  
-    &__families {
-      display: flex;
-      flex-direction: column;
-    }
+   /* Use multi‑column layout for masonry */
+  column-count: 3;
+  column-gap: 0; // No gap between columns
+
+  &__make {
+    padding: rem(15);
+    display: flex;
+    flex-direction: column;
+    break-inside: avoid; /* Prevent makes from breaking across columns */
+    height: fit-content; /* Adjust height to content */
+  }
+
+  &__makeTitle {
+    font-size: 1.5rem;
+    margin-bottom: rem(10);
+  }
+
+  &__families {
+    display: flex;
+    flex-direction: column;
+    gap: rem(10);
+  }
 }
+
+/* This is the css for a normal grid layout but will have a gap on the column */
+// .carList {
+//   display: grid;
+//   grid-template-columns: repeat(3, 1fr);
+//   gap: rem(20);
+//   grid-auto-flow: dense; /* Fill in gaps */
+//   grid-auto-rows: auto; /* Adjust row height to content */
+
+//   &__make {
+//     padding: rem(15);
+//     display: flex;
+//     flex-direction: column;
+//     break-inside: avoid; /* Prevent makes from breaking across columns */
+//     height: fit-content; /* Adjust height to content */
+//   }
+
+//   &__makeTitle {
+//     font-size: 1.5rem;
+//     margin-bottom: rem(10);
+//   }
+
+//   &__families {
+//     display: flex;
+//     flex-direction: column;
+//     gap: rem(10);
+//   }
+// }
