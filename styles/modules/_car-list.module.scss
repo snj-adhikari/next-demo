@@ -1,7 +1,12 @@
 .carList {
-   /* Use multi‑column layout for masonry */
+  /* if want to use a grid layout, uncomment the following
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: rem(20);
+  */
+   /* Using multi‑column layout for masonry */
   column-count: 3;
-  column-gap: 0; // No gap between columns
+  column-gap: rem(20);
 
   &__make {
     padding: rem(15);
@@ -9,6 +14,27 @@
     flex-direction: column;
     break-inside: avoid; /* Prevent makes from breaking across columns */
     height: fit-content; /* Adjust height to content */
+    margin-block-end: rem(20); /* Space between makes */
+
+     /* Assign alternating background colors for each make */
+    &:nth-of-type(6n+1) {
+      background-color: $primary-color;
+    }
+    &:nth-of-type(6n+2) {
+      background-color: $secondary-color;
+    }
+    &:nth-of-type(6n+3) {
+      background-color: $success-color;
+    }
+    &:nth-of-type(6n+4) {
+      background-color: $danger-color;
+    }
+    &:nth-of-type(6n+5) {
+      background-color: $warning-color;
+    }
+    &:nth-of-type(6n) {
+      background-color: $info-color;
+    }
   }
 
   &__makeTitle {
@@ -22,31 +48,3 @@
     gap: rem(10);
   }
 }
-
-/* This is the css for a normal grid layout but will have a gap on the column */
-// .carList {
-//   display: grid;
-//   grid-template-columns: repeat(3, 1fr);
-//   gap: rem(20);
-//   grid-auto-flow: dense; /* Fill in gaps */
-//   grid-auto-rows: auto; /* Adjust row height to content */
-
-//   &__make {
-//     padding: rem(15);
-//     display: flex;
-//     flex-direction: column;
-//     break-inside: avoid; /* Prevent makes from breaking across columns */
-//     height: fit-content; /* Adjust height to content */
-//   }
-
-//   &__makeTitle {
-//     font-size: 1.5rem;
-//     margin-bottom: rem(10);
-//   }
-
-//   &__families {
-//     display: flex;
-//     flex-direction: column;
-//     gap: rem(10);
-//   }
-// }

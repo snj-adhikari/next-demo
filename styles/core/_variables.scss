@@ -11,16 +11,12 @@ $danger-color: var(--color--error);
 $info-color: var(--color--info);
 $warning-color: var(--color--warning);
 $light-color: var(--color--light);
-$dark-color: var(--color--neutral-200);
+$neautral-color: var(--color--neutral);
 $white-color: var(--color--white);
 
-
-
-
-$neutral-color: var(--color--neutral-200);
 $color-neutral-grey: var(--color--neutral-grey);
 
-$overlay-color: rgba(0, 0, 0, 0.7);
+$overlay-color: var(--color--overlay);
 
 
 // Express font size variables :) - default one  for reference.
