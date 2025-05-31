@@ -10,9 +10,9 @@ const carsHandler = (_req: NextApiRequest, res: NextApiResponse) => {
     }
 
     const carsWithSortedFamilies: Car[] = sortCarsByFamilies([...sampleUserData]as Car[]);
-    setTimeout(() => {
-      return res.status(200).json(carsWithSortedFamilies); // Send the data with sorted families
-    }, 4000);
+
+    return res.status(200).json(carsWithSortedFamilies); // Send the data with sorted families
+ 
 
   } catch (err: any) {
     res.status(500).json({ statusCode: 500, message: err.message });

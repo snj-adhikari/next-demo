@@ -1,7 +1,9 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode, useEffect } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import NProgress from 'nprogress';
+import 'nprogress/nprogress.css';
 
 type Props = {
   children?: ReactNode
@@ -9,9 +11,33 @@ type Props = {
   carUri?: string
 }
 
-const Layout = ({ children, title = 'This is the default title', carUri = 'cars' }: Props) => {
+const Layout = ({ children, title = 'This is the default title', carUri = '/cars-for-sale' }: Props) => {
   const router = useRouter()
-  const carPath = `/${carUri}`
+  const carPath = `/cars${carUri}`
+
+
+  useEffect(() => {
+    const handleStart = () => {
+      NProgress.start();
+    };
+    const handleComplete = () => {
+      NProgress.done();
+    };
+    const handleStop = () => {
+      NProgress.done();
+    };
+
+    router.events.on('routeChangeStart', handleStart);
+    router.events.on('routeChangeComplete', handleComplete);
+    router.events.on('routeChangeError', handleStop); // Use handleStop for errors
+
+    return () => {
+      router.events.off('routeChangeStart', handleStart);
+      router.events.off('routeChangeComplete', handleComplete);
+      router.events.off('routeChangeError', handleStop); // Use handleStop for errors
+    };
+  }, [router]);
+
   return (
     <div>
       <Head>

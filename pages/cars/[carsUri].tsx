@@ -6,12 +6,13 @@ import { PageTemplate } from '../../components/PageTemplate'
 type Props = {
   cars: Car[]
   pageInfo: PageData
+  carsUri: string
 }
 
-const WithServerSideProps = ({ cars, pageInfo }: Props) => {
-  const { title: carTitle = 'Cars List', uri: carUri = 'cars' } = pageInfo || {};
+const WithServerSideProps = ({ cars, pageInfo, carsUri }: Props) => {
+  const { title: carTitle = 'Cars List' } = pageInfo || {};
   return (
-    <Layout title={carTitle +"| Next.js + TypeScript Example"} carUri={carUri}>
+    <Layout title={ carTitle +" | Next.js + TypeScript Example"} carUri={carsUri}>
       <PageTemplate cars={cars} pageInfo={pageInfo}/>
     </Layout>
   )
@@ -29,12 +30,13 @@ export const getServerSideProps: GetServerSideProps = async (ctx: GetServerSideP
 
     const carsData: Car[] = await carsResponse.json();
     const pageInfo: PageData = await pageResponse.json();
+    const carsUri = pageInfo?.uri || '/cars-for-sale';
 
-    return { props: { cars: carsData, pageInfo: pageInfo } };
+    return { props: { cars: carsData, pageInfo: pageInfo, carsUri:carsUri } };
   } catch (error) {
     console.error("Error fetching data in getServerSideProps:", error);
     return { props: { cars: [], pageInfo: null } };
   }
 }
 
-export default WithServerSideProps
+export default WithServerSideProps;
