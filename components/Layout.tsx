@@ -13,7 +13,7 @@ type Props = {
 
 const Layout = ({ children, title = 'This is the default title', carUri = '/cars-for-sale' }: Props) => {
   const router = useRouter()
-  const carPath = `/cars${carUri}`
+  const carPath = `${carUri}`
 
 
   useEffect(() => {
