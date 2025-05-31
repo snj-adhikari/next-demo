@@ -18,6 +18,13 @@ export const sortTheFamilies = (families: Family[]) => {
     });
 }
 
+export const formatPrice = (price: number | undefined): string => {
+    if (price === undefined) {
+      return 'N/A';
+    }
+    return price.toLocaleString('en-Au');
+};
+
 export const sortCarsByFamilies = (cars: Car[]) => {
     
     // Now, iterate through each sorted car and sort its 'families' array

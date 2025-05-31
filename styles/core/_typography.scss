@@ -23,6 +23,21 @@ p {
 	line-height: 1.5;
 }
 
+a {
+	color: #0070f3;
+	text-decoration: none;
+  
+	&:hover {
+	  text-decoration: underline;
+	}
+}
+
+
+img {
+	max-width: 100%;
+	display: block;
+}
+  
 // Additional typography styles...
 
 // Customize other typography elements as needed

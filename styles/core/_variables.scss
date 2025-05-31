@@ -1,15 +1,18 @@
 
 $base-font-size: 16px;
+
+
+
 // Colors
-$primary-color: var(--wp--preset--color--primary);
-$secondary-color:var(--wp--preset--color--secondary);
-$success-color: var(--wp--preset--color--success);
-$danger-color: var(--wp--preset--color--error);
-$info-color: var(--wp--preset--color--info);
-$warning-color: var(--wp--preset--color--warning);
-$light-color: var(--wp--preset--color--light);
+$primary-color: var(--color--primary);
+$secondary-color:var(--color--secondary);
+$success-color: var(--color--success);
+$danger-color: var(--color--error);
+$info-color: var(--color--info);
+$warning-color: var(--color--warning);
+$light-color: var(--color--light);
 $dark-color: var(--color--neutral-200);
-$white-color: var(--wp--preset--color--white);
+$white-color: var(--color--white);
 
 $admin-failure-color: var(--color-failure);
 
@@ -20,7 +23,7 @@ $soft-light-color: var(--color--medium-light);
 $neutral-color: var(--color--neutral-200);
 $color-neutral-grey: var(--color--neutral-grey);
 
-$color-box-shadow: #00000026;
+$overlay-color: #00000026;
 
 
 // Express font size variables :) - default one  for reference.

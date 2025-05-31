@@ -1,7 +1,7 @@
 import React from 'react';
 import { Car } from '../interfaces';
 import CarCard from './CarCard';
-import styles from '../styles/components/_car-list.module.scss';
+import styles from '../styles/modules/_car-list.module.scss';
 
 interface CarListProps {
   cars: Car[];

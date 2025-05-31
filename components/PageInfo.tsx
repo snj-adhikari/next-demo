@@ -1,6 +1,6 @@
 import React from 'react';
 import { PageData } from '../interfaces';
-import '../styles/components/_page-info.module.scss';
+import '../styles/modules/_page-info.module.scss';
 
 interface PageInfoProps {
   pageInfo: PageData;

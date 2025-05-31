@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import styles from  '../styles/components/_light-box.module.scss';
+import styles from  '../styles/modules/_light-box.module.scss';
 
 interface LightboxProps {
   images: string[];

@@ -1,3 +1,5 @@
+@import '../core/base-init';
+
 .lightbox {
   &__container {
     position: relative;
@@ -6,7 +8,7 @@
 
   &__thumbnail {
     max-width: 100%;
-    width: 100px;
+    width: rem(100);
     object-fit: cover;;
     height: auto;
     cursor: pointer;
@@ -18,7 +20,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: $overlay-color;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,37 +34,37 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 50px; // Add some gap before thumbnails
+    margin-bottom: rem(50); // Add some gap before thumbnails
   }
 
   &__image {
     max-width: 100%;
     max-height: 70vh;
     object-fit: contain;
-    margin-bottom: 10px;
+    margin-bottom: rem(10);
   }
 
   &__thumbnails {
     display: flex;
     overflow-x: auto;
     margin-top: auto; // Push thumbnails to the bottom
-    gap: 5px; // Add gap between thumbnails
+    gap: rem(5); // Add gap between thumbnails
   }
 
   &__thumbnail_small {
-    width: 75px;
-    height: 75px;
+    width: rem(75);
+    height: rem(75);
     object-fit: cover;
     cursor: pointer;
-    border: 2px solid transparent;
+    border: rem(2) solid transparent;
 
     &:hover {
-      border-color: #fff;
+      border-color: $white-color;
     }
   }
 
   &__thumbnail_active {
-    border-color: #fff;
+    border-color: $white-color;
   }
 
 
@@ -72,8 +74,8 @@
     position: absolute;
     background: none;
     border: none;
-    color: white;
-    font-size: 2rem;
+    color: $white-color;
+    font-size: rem(32);
     cursor: pointer;
     padding: 0.5rem;
     z-index: 10;
@@ -85,14 +87,17 @@
   }
 
   &__closeButton {
-    right: 10px;
-    top: 10px;
+    right: rem(10);
+    top: rem(10);
+  }
+
+  &__prevButton, &__nextButton {
+    top: 45%;
+    transform: translateY(-45%);
   }
 
   &__prevButton {
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
+    left: rem(10);
 
     &_hidden {
       visibility: hidden;
@@ -100,9 +105,8 @@
   }
 
   &__nextButton {
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
+    right: rem(10);
+
 
     &_hidden {
       visibility: hidden;
