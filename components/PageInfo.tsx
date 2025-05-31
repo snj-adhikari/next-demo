@@ -1,6 +1,6 @@
 import React from 'react';
 import { PageData } from '../interfaces';
-import '../styles/modules/_page-info.module.scss';
+import  styles from '../styles/modules/_page-info.module.scss';
 
 interface PageInfoProps {
   pageInfo: PageData;
@@ -8,9 +8,9 @@ interface PageInfoProps {
 
 const PageInfo: React.FC<PageInfoProps> = ({ pageInfo }) => {
   return (
-    <div className="page-info">
-      <h1 className="page-info__title">{pageInfo?.title}</h1>
-      <p className="page-info__content">{pageInfo?.content}</p>
+    <div className={styles.pageInfo}>
+      <h1 className={styles.pageInfo__title}>{pageInfo?.title}</h1>
+      <p className={styles.pageInfo__content}>{pageInfo?.content}</p>
     </div>
   );
 };

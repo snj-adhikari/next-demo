@@ -1,7 +1,5 @@
 import { Car, Family } from "../interfaces";
 
-
-
 export const sortTheFamilies = (families: Family[]) => {
     // Sort the families array based on whether they have baseVariantImage
     return families.sort((a: Family, b: Family) => {
@@ -9,11 +7,11 @@ export const sortTheFamilies = (families: Family[]) => {
         const bFamilyHasImage = b.baseVariantImages.length > 0;
 
         if (aFamilyHasImage && !bFamilyHasImage) {
-        return -1; // Family A (with image) comes before Family B (without image)
+            return -1; // Family A (with image) comes before Family B (without image)
         } else if (!aFamilyHasImage && bFamilyHasImage) {
-        return 1; // Family B (with image) comes before Family A (without image)
+            return 1; // Family B (with image) comes before Family A (without image)
         } else {
-        return 0; // No change in order for families that both have/don't have images
+            return 0; // No change in order for families that both have/don't have images
         }
     });
 }
