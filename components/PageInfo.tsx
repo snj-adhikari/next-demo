@@ -3,7 +3,7 @@ import { PageData } from '../interfaces';
 import  styles from '../styles/modules/_page-info.module.scss';
 
 interface PageInfoProps {
-  pageInfo: PageData;
+  pageInfo?: PageData;
 }
 
 const PageInfo: React.FC<PageInfoProps> = ({ pageInfo }) => {
