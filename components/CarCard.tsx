@@ -12,15 +12,16 @@ const CarCard: React.FC<CarCardProps> = ({ family }) => {
   const minPriceText = formatPrice(family.familyPrice?.min);
   const maxPriceText = formatPrice(family.familyPrice?.max);
   const isPriceUnavailable = minPriceText === '' && maxPriceText === '';
+  const cardClassName = 'car-card';
   return (
-    <div className={styles.carCard}>
+    <div className={styles[cardClassName]}>
       {family.baseVariantImages.length > 0 && (
         <Lightbox images={family.baseVariantImages} alt={family.title} />
       )}
-      <div className={styles.carCard__content}>
-        <h3 className={styles.carCard__title}>{family.title}</h3>
+      <div className={styles[cardClassName+'__content']}>
+        <h3 className={styles[cardClassName+'__title']}>{family.title}</h3>
         
-        <p className={styles.carCard__price}>
+        <p className={styles[cardClassName+'__price']}>
           Price:💰 {isPriceUnavailable ? 'Contact Dealer' : <span>{minPriceText} - {maxPriceText}</span>}
         </p>
       </div>
