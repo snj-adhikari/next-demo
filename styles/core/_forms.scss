@@ -1,0 +1,21 @@
+/* Default form styles */
+input,
+textarea,
+select {
+	padding: rem(10);
+	border: rem(1) solid $primary-color;
+	color: $primary-color;
+	background-color: $secondary-color;
+	transition: border-color 0.3s ease-in-out;
+}
+
+/* 
+  Additional form styles
+  Add your custom form styles here
+  Hover effect for form elements 
+*/
+input:hover,
+textarea:hover,
+select:hover {
+	border-color: $secondary-color;
+}

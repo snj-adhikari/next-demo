@@ -1,0 +1,67 @@
+$base-spacing: 1rem;
+
+@mixin margin-auto() {
+	margin-inline: auto;
+}
+
+@function spacing-multiplier($multiplier : 1) {
+
+	@return $base-spacing * $multiplier;
+}
+
+@mixin spacing($multiplier: 1) {
+	margin: $base-spacing * $multiplier;
+	padding: $base-spacing * $multiplier;
+}
+
+@mixin margin($multiplier: 1) {
+	margin: $base-spacing * $multiplier;
+}
+
+@mixin padding($multiplier: 1) {
+	padding: $base-spacing * $multiplier;
+}
+
+@mixin margin-top($multiplier: 1) {
+	margin-block-start: $base-spacing * $multiplier;
+}
+
+@mixin margin-right($multiplier: 1) {
+	margin-inline-end: $base-spacing * $multiplier;
+}
+
+@mixin margin-bottom($multiplier: 1) {
+	margin-block-end: $base-spacing * $multiplier;
+}
+
+@mixin margin-left($multiplier: 1) {
+	margin-inline-start: $base-spacing * $multiplier;
+}
+
+@mixin padding-top($multiplier: 1) {
+	padding-block-start: $base-spacing * $multiplier;
+}
+
+@mixin padding-right($multiplier: 1) {
+	padding-inline-end: $base-spacing * $multiplier;
+}
+
+@mixin padding-bottom($multiplier: 1) {
+	padding-block-end: $base-spacing * $multiplier;
+}
+
+@mixin padding-left($multiplier: 1) {
+	padding-inline-start: $base-spacing * $multiplier;
+}
+
+@mixin padding-block($multiplier: 1) {
+	padding-block: $base-spacing * $multiplier;
+}
+
+@mixin padding-inline($multiplier: 1) {
+	padding-inline: $base-spacing * $multiplier;
+}
+
+@mixin margin-block($multiplier: 1) {
+	margin-block: $base-spacing * $multiplier;
+}

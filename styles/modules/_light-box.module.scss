@@ -1,0 +1,114 @@
+.lightbox {
+  &__container {
+    position: relative;
+    display: inline-block;
+  }
+
+  &__thumbnail {
+    max-width: 100%;
+    width: rem(100);
+    object-fit: cover;;
+    height: auto;
+    cursor: pointer;
+  }
+
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $overlay-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  &__content {
+    position: relative;
+    max-width: 80%;
+    max-height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: rem(50); // Add some gap before thumbnails
+  }
+
+  &__image {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    margin-bottom: rem(10);
+  }
+
+  &__thumbnails {
+    display: flex;
+    overflow-x: auto;
+    margin-top: auto; // Push thumbnails to the bottom
+    gap: rem(5); // Add gap between thumbnails
+  }
+
+  &__thumbnail--small {
+    width: rem(75);
+    height: rem(75);
+    object-fit: cover;
+    cursor: pointer;
+    border: rem(2) solid transparent;
+
+    &:hover {
+      border-color: $white-color;
+    }
+  }
+
+  &__thumbnail--active {
+    border-color: $white-color;
+  }
+
+  &__close-button {
+    right: rem(10);
+    top: rem(10);
+  }
+
+  &__prev-button {
+    left: rem(10);
+
+    &--hidden {
+      visibility: hidden;
+    }
+  }
+
+  &__next-button {
+    right: rem(10);
+
+
+    &--hidden {
+      visibility: hidden;
+    }
+  }
+
+  &__prev-button, &__next-button {
+    top: 45%;
+    transform: translateY(-45%);
+  }
+
+  &__close-button,
+  &__prev-button,
+  &__next-button {
+    position: absolute;
+    background: none;
+    border: none;
+    color: $white-color;
+    font-size: rem(32);
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 10;
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+
+}

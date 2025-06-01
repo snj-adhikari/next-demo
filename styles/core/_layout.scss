@@ -1,0 +1,95 @@
+$spacing-multipliers: (
+	1: 1,
+	2: 2,
+	3: 3
+);
+
+@each $multiplier, $value in $spacing-multipliers {
+	.p-#{$multiplier} {
+
+		@include padding($value);
+	}
+	.m-#{$multiplier} {
+
+		@include margin($value);
+	}
+
+	.mt-#{$multiplier} {
+
+		@include margin-top($value);
+	}
+
+	.mb-#{$multiplier} {
+
+		@include margin-bottom($value);
+	}
+
+	.ml-#{$multiplier} {
+
+		@include margin-left($value);
+	}
+
+	.mr-#{$multiplier} {
+
+		@include margin-right($value);
+	}
+
+	.mx-#{$multiplier} {
+
+		@include margin-left($value);
+		@include margin-right($value);
+	}
+	.my-#{$multiplier} {
+
+		@include margin-top($value);
+		@include margin-bottom($value);
+	}
+
+	.pl-#{$multiplier} {
+
+		@include padding-left($value);
+	}
+
+	.pt-#{$multiplier} {
+
+		@include padding-top($value);
+	}
+
+	.pb-#{$multiplier} {
+
+		@include padding-bottom($value);
+	}
+
+	.pr-#{$multiplier} {
+
+		@include padding-right($value);
+	}
+
+	.px-#{$multiplier} {
+
+		@include padding-left($value);
+		@include padding-right($value);
+	}
+
+	.py-#{$multiplier} {
+
+		@include padding-top($value);
+		@include padding-bottom($value);
+	}
+}
+
+.mx-auto {
+
+	@include margin-auto();
+}
+
+.layout {
+	min-height: 75vh;
+}
+
+.layout,
+footer {
+  max-width: rem(1440);
+  margin: 0 auto;
+  padding: rem(20);
+}

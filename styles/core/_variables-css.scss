@@ -1,0 +1,23 @@
+:root {
+    --color-primary: #00C853;      // Vibrant Green for car brand
+    --color-secondary: #3F51B5;      // Deep Indigo for a more interesting secondary
+    --color-success: #28a745;        // Green
+    --color-error: #dc3545;          // Red
+    --color-info: #17a2b8;           // Teal
+    --color-warning: #ffc107;        // Amber
+    --color-light: #f8f9fa;          // Light gray
+    --color-neutral: #343a40;        // Dark gray
+    --color-white: #fff;             // White
+    --color-neutral-grey: #555;
+    --color-light-grey: #eee;
+    --color-overlay: rgb(0, 0, 0 / 70%);
+    --font-size-xs: rem(12);
+    --font-size-s: rem(14);
+    --font-size-m: rem(16);
+    --font-size-l: rem(18);
+    --font-size-xl: rem(20);
+    --font-size-2xl: rem(24);
+    --font-size-3xl: rem(30);
+    --font-size-4xl: rem(36);
+    --font-size-5xl: rem(48);
+}

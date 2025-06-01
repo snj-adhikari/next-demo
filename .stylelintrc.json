@@ -1,0 +1,18 @@
+{
+    "customSyntax": "postcss-scss",
+    "extends": [
+      "stylelint-config-standard",
+      "stylelint-config-css-modules"
+    ],
+    "plugins": [
+      "stylelint-scss"
+    ],
+    "rules": {
+      "at-rule-no-unknown": null,
+      "scss/at-rule-no-unknown": true,
+      "import-notation": null,
+      "declaration-property-value-no-unknown": null,
+      "at-rule-empty-line-before": null,
+      "media-query-no-invalid": null
+    }
+  }
