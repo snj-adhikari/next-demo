@@ -58,7 +58,7 @@ const Lightbox: React.FC<LightboxProps> = ({ images, alt }) => {
 
             {hasMultipleImages && (
               <button
-                className={`${styles[lightboxClassName + '__prev-button']} ${isFirstImage ? styles[lightboxClassName + '__prev-button_hidden'] : ''}`}
+                className={`${styles[lightboxClassName + '__prev-button']} ${isFirstImage ? styles[lightboxClassName + '__prev-button--hidden'] : ''}`}
                 onClick={prevImage}
                 disabled={isFirstImage}
               >
