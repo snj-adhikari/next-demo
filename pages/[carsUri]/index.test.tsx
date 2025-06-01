@@ -30,6 +30,7 @@ jest.mock('../../components/PageTemplate', () => {
 
 // Mock the sortCarsByFamilies helper since its internal logic is not the focus of this test
 jest.mock('../../utils/helpers', () => ({
+  filterCarsThatHaveNoFamiliesImages: jest.fn((cars: Car[]) => cars),
   sortCarsByFamilies: jest.fn((cars: Car[]) => cars), // Simply return the cars as is for testing
 }));
 
@@ -51,7 +52,20 @@ describe('WithServerSideProps', () => {
       uuid: 'uuid-1',
       type: 'sedan',
       makeableId: 101,
-      families: [],
+      families: [
+        {
+          baseVariantImages: [
+            "https://images.drive.com.au/image/upload/c_fill,f_auto,h_510,q_auto:good,w_890/vehicles/redbook/AUVABAR2023AEAA/S000ARFB"
+          ],
+          slug: "700",
+          title: "700",
+          uuid: "e34fdeb714f4aedaf9",
+          familyPrice: {
+            min: 8000,
+            max: 8300
+          }
+        }
+      ],
     },
     {
       slug: 'car-2',
@@ -59,7 +73,20 @@ describe('WithServerSideProps', () => {
       uuid: 'uuid-2',
       type: 'suv',
       makeableId: 102,
-      families: [],
+      families: [
+        {
+          baseVariantImages: [
+            "https://images.drive.com.au/image/upload/c_fill,f_auto,h_510,q_auto:good,w_890/vehicles/redbook/AUVABAR2023AEAA/S000ARFB"
+          ],
+          slug: "695",
+          title: "695",
+          uuid: "8aa2b714f4aea569",
+          familyPrice: {
+            min: 36400,
+            max: 38400
+          }
+        }
+      ],
     },
   ];
 
