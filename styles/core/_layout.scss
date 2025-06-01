@@ -83,6 +83,10 @@ $spacing-multipliers: (
 	@include margin-auto();
 }
 
+body {
+	@include margin(0);
+}
+
 .layout {
 	min-height: 75vh;
 }
@@ -91,5 +95,8 @@ $spacing-multipliers: (
 footer {
   max-width: rem(1440);
   margin: 0 auto;
-  padding: rem(20);
+  
+  	@include tablet-and-desktop {
+		@include padding(0.4);
+   	}
 }

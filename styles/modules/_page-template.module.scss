@@ -1,3 +1,6 @@
 .page-template {
-    padding: 20px;
+    @include tablet-and-desktop {
+        @include padding(0.4);
+    }
+
 }

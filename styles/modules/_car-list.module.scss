@@ -6,8 +6,12 @@
   */
 
   /* Using multi‑column layout for masonry */
-  column-count: 3;
-  column-gap: rem(20);
+  column-count: 1;
+
+  @include tablet-and-desktop {
+    column-count: 3;
+    column-gap: rem(20);
+  }
 
   &__make {
     padding: rem(15);
