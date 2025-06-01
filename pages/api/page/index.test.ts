@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import pageHandler from './index';
+import pageHandler from './index.page';
 import { pageData } from '../../../utils/page-data';
 
 // Use fake timers to control setTimeout

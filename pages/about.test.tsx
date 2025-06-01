@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import AboutPage from './about';
+import AboutPage from './about.page';
 
 // Mock the Layout component
 jest.mock('../components/Layout', () => ({
