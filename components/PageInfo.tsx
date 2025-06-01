@@ -10,7 +10,7 @@ const PageInfo: React.FC<PageInfoProps> = ({ pageInfo }) => {
   return (
     <div className={styles.pageInfo}>
       <h1 className={styles.pageInfo__title}>{pageInfo?.title}</h1>
-      <p className={styles.pageInfo__content}>{pageInfo?.content}</p>
+      <p className={styles.pageInfo__content} data-testid="page-info-content">{pageInfo?.content}</p>
     </div>
   );
 };

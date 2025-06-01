@@ -64,7 +64,12 @@ const Lightbox: React.FC<LightboxProps> = ({ images, alt }) => {
               </button>
             )}
 
-            <img src={images[currentIndex]} alt={alt} className={styles.lightbox__image} />
+            <img
+              src={images[currentIndex]}
+              alt={alt}
+              className={styles.lightbox__image}
+              data-testid="lightbox-image"
+            />
 
             {hasMultipleImages && (
               <button
