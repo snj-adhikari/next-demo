@@ -7,7 +7,7 @@ jest.mock('next/router', () => ({
     useRouter: jest.fn(),
 }));
 
-const MockHead = ({ children }: any) => {
+const MockHead = ({ children }: { children: React.ReactNode }) => {
     React.Children.forEach(children, child => {
         if (React.isValidElement(child) && child.type === 'title') {
             document.title = (child as React.ReactElement).props.children;
@@ -18,9 +18,13 @@ const MockHead = ({ children }: any) => {
 
 const mockHead = jest.fn().mockImplementation(MockHead);
 
-jest.mock('next/head', () => (props: any) => {
-    mockHead(props);
-    return <>{props.children}</>;
+jest.mock('next/head', () => {
+    const NextHead = (props: { children: React.ReactNode }) => {
+        mockHead(props);
+        return <>{props.children}</>;
+    };
+    NextHead.displayName = 'NextHead';
+    return NextHead;
 });
 
 describe('Layout Component', () => {
