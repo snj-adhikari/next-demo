@@ -26,8 +26,12 @@
 
       span {
         letter-spacing: rem(1.5);
-        font-size: rem(22);
+        font-size: $font-size-m;
         color: $primary-color;
+
+        @include tablet-and-desktop {
+          font-size: $font-size-l;
+        }
       }
     }
     

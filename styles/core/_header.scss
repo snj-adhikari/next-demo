@@ -6,12 +6,25 @@ header {
     top: 0;
   
     > nav {
+      @include margin-auto();
+      
       max-width: rem(1440);
-      margin: 0 auto;
+      display:flex;
+      justify-content: start;
+      flex-wrap: nowrap;
+
+      @include mobile-only {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; // Firefo
+          &::-webkit-scrollbar {
+            display: none;
+          }
+      }
   
       > a {
-        padding: rem(20) rem(15);
-        display: inline-block;
+        padding: rem(20) rem(10);
+        display:block;
         color: $white-color;
   
         &.current {
