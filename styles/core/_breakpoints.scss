@@ -16,10 +16,10 @@ $breakpoints: (
 );
 
 @mixin responsive-breakpoint($breakpoint, $option: "max") {
-	// Determine the breakpoint value (predefined or custom)
+	/* Determine the breakpoint value (predefined or custom) */
 	$breakpoint-value: if(map.has-key($breakpoints, $breakpoint), map.get($breakpoints, $breakpoint), $breakpoint);
 
-	// Generate media query based on the option
+	/* Generate media query based on the option */
 	@if $option == "max" {
 
 		@media (max-width: $breakpoint-value) {
