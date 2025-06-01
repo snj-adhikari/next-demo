@@ -23,6 +23,14 @@ export const formatPrice = (price: number | undefined): string => {
     return '$' + price.toLocaleString('en-Au');
 };
 
+export const filterCarsThatHaveNoFamiliesImages = (cars: Car[]) => {
+    // Filter out cars that have no families with baseVariantImages
+    // Filter out cars that do not have at least one family with an image
+    return cars.filter((car: Car) => 
+        car.families.some((family: Family) => family.baseVariantImages.length > 0)
+    );
+}
+
 export const sortCarsByFamilies = (cars: Car[]) => {
     
     // Now, iterate through each sorted car and sort its 'families' array

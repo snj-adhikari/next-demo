@@ -1,4 +1,4 @@
-import { formatPrice, sortTheFamilies, sortCarsByFamilies } from './helpers';
+import { formatPrice, sortTheFamilies, sortCarsByFamilies, filterCarsThatHaveNoFamiliesImages } from './helpers';
 import { Car, Family } from '../interfaces';
 
 describe('helpers', () => {
@@ -74,6 +74,75 @@ describe('helpers', () => {
 
       // For car2, there's only one family
       expect(sortedCars[1].families).toEqual([familyWithoutImage]);
+    });
+  });
+
+  describe('filterCarsThatHaveNoFamiliesImages', () => {
+    it('filters out cars that have no families with images', () => {
+      const familyWithImage: Family = { baseVariantImages: ['img1'] } as Family;
+      const familyWithoutImage: Family = { baseVariantImages: [] } as Family;
+  
+      const carWithImage: Car = {
+        slug: 'car-1',
+        title: 'Car One',
+        uuid: 'uuid-1',
+        type: 'sedan',
+        makeableId: 101,
+        families: [familyWithoutImage, familyWithImage],
+      } as Car;
+  
+      const carWithoutImage: Car = {
+        slug: 'car-2',
+        title: 'Car Two',
+        uuid: 'uuid-2',
+        type: 'suv',
+        makeableId: 102,
+        families: [familyWithoutImage],
+      } as Car;
+  
+      const filteredCars = filterCarsThatHaveNoFamiliesImages([carWithImage, carWithoutImage]);
+      expect(filteredCars).toEqual([carWithImage]);
+    });
+  
+    it('returns an empty array if no cars have families with images', () => {
+      const familyWithoutImage: Family = { baseVariantImages: [] } as Family;
+      const car1: Car = {
+        slug: 'car-1',
+        title: 'Car One',
+        uuid: 'uuid-1',
+        type: 'sedan',
+        makeableId: 101,
+        families: [familyWithoutImage],
+      } as Car;
+  
+      const car2: Car = {
+        slug: 'car-2',
+        title: 'Car Two',
+        uuid: 'uuid-2',
+        type: 'suv',
+        makeableId: 102,
+        families: [familyWithoutImage],
+      } as Car;
+  
+      const filteredCars = filterCarsThatHaveNoFamiliesImages([car1, car2]);
+      expect(filteredCars).toEqual([]);
+    });
+  
+    it('includes a car if at least one family has an image', () => {
+      const familyWithoutImage: Family = { baseVariantImages: [] } as Family;
+      const familyWithImage: Family = { baseVariantImages: ['img1'] } as Family;
+      
+      const car: Car = {
+        slug: 'car-3',
+        title: 'Car Three',
+        uuid: 'uuid-3',
+        type: 'coupe',
+        makeableId: 103,
+        families: [familyWithoutImage, familyWithImage],
+      } as Car;
+      
+      const filteredCars = filterCarsThatHaveNoFamiliesImages([car]);
+      expect(filteredCars).toEqual([car]);
     });
   });
 });

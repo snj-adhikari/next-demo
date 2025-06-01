@@ -3,7 +3,7 @@ import { GetServerSideProps } from 'next'
 import { Car, PageData } from '../../interfaces'
 import Layout from '../../components/Layout'
 import PageTemplate from '../../components/PageTemplate'
-import { sortCarsByFamilies } from '../../utils/helpers'
+import { filterCarsThatHaveNoFamiliesImages, sortCarsByFamilies } from '../../utils/helpers'
 
 type Props = {
   cars: Car[]
@@ -31,7 +31,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
     }
 
     const carsApiInfo = await carsResponse.json();
-    const carsData: Car[] = sortCarsByFamilies(carsApiInfo as Car[]);
+    const carsData: Car[] = filterCarsThatHaveNoFamiliesImages(sortCarsByFamilies(carsApiInfo as Car[]));
     const pageInfo: PageData = await pageResponse.json();
     const carsUri = pageInfo?.uri || '/cars-for-sale';
 
