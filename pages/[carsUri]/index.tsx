@@ -2,6 +2,7 @@ import { GetServerSideProps, GetServerSidePropsContext } from 'next'
 import { Car, PageData } from '../../interfaces'
 import Layout from '../../components/Layout'
 import { PageTemplate } from '../../components/PageTemplate'
+import { sortCarsByFamilies } from '../../utils/helpers'
 
 type Props = {
   cars: Car[]
@@ -28,7 +29,8 @@ export const getServerSideProps: GetServerSideProps = async (ctx: GetServerSideP
       throw new Error('Failed to fetch data');
     }
 
-    const carsData: Car[] = await carsResponse.json();
+    const carsApiInfo = await carsResponse.json();
+    const carsData: Car[] = sortCarsByFamilies(carsApiInfo as Car[]);
     const pageInfo: PageData = await pageResponse.json();
     const carsUri = pageInfo?.uri || '/cars-for-sale';
 

@@ -18,9 +18,9 @@ export const sortTheFamilies = (families: Family[]) => {
 
 export const formatPrice = (price: number | undefined): string => {
     if (price === undefined) {
-      return 'N/A';
+      return '';
     }
-    return price.toLocaleString('en-Au');
+    return '$' + price.toLocaleString('en-Au');
 };
 
 export const sortCarsByFamilies = (cars: Car[]) => {

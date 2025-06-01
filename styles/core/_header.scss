@@ -1,15 +1,18 @@
 header {
-    background: black;
-    padding: 0 20px;
+    background: $neutral-color;
+    padding: 0 rem(20);
+    position: sticky;
+    z-index: 10;
+    top: 0;
   
     > nav {
-      max-width: 1440px;
+      max-width: rem(1440);
       margin: 0 auto;
   
       > a {
-        padding: 20px 15px;
+        padding: rem(20) rem(15);
         display: inline-block;
-        color: white;
+        color: $white-color;
   
         &.current {
           text-decoration: underline;

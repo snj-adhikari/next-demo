@@ -1,13 +1,27 @@
+// :root {
+//     --color--primary: #FF5722;      // Vibrant Orange for car brand
+//     --color--secondary: #3F51B5;    // Deep Indigo for a more interesting secondary
+//     --color--success: #28a745;      // Green
+//     --color--error: #dc3545;        // Red
+//     --color--info: #17a2b8;         // Teal
+//     --color--warning: #ffc107;      // Amber
+//     --color--light: #f8f9fa;        // Light gray
+//     --color--neutral: #343a40;      // Dark gray
+//     --color--white: #fff;           // White
+//     --color--neutral-grey: #555;
+//     --color--overlay: rgba(0, 0, 0, 0.7);    
+// }
 :root {
-    --color--primary: #FF5722;      // Vibrant Orange for car brand
-    --color--secondary: #3F51B5;    // Deep Indigo for a more interesting secondary
-    --color--success: #28a745;      // Green
-    --color--error: #dc3545;        // Red
-    --color--info: #17a2b8;         // Teal
-    --color--warning: #ffc107;      // Amber
-    --color--light: #f8f9fa;        // Light gray
-    --color--neutral: #343a40;      // Dark gray
-    --color--white: #fff;           // White
+    --color--primary: #00C853;      // Vibrant Green for car brand
+    --color--secondary: #3F51B5;      // Deep Indigo for a more interesting secondary
+    --color--success: #28a745;        // Green
+    --color--error: #dc3545;          // Red
+    --color--info: #17a2b8;           // Teal
+    --color--warning: #ffc107;        // Amber
+    --color--light: #f8f9fa;          // Light gray
+    --color--neutral: #343a40;        // Dark gray
+    --color--white: #fff;             // White
     --color--neutral-grey: #555;
-    --color--overlay: rgba(0, 0, 0, 0.7);    
+    --color--light-grey: #eee;
+    --color--overlay: rgba(0, 0, 0, 0.7);
 }

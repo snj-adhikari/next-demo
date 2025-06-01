@@ -1,34 +1,39 @@
 .carCard {
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #eee;
-    border-radius: 4px;
+    @include margin-bottom(0.5);
+    @include padding-block(0.6);
+    @include padding-inline(1);
+
+    border: rem(1) solid $light-grey-color;
+    border-radius: rem(4);
     display:flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    gap: 10px;
+    justify-content: start;
+    gap: rem(16);
 
   
     &__title {
-      font-size: 1.2rem;
-      margin-bottom: 5px;
+      @include margin-bottom(0.2);
+
+      font-size: rem(20);
     }
   
     &__price {
+      @include margin-block(0.4);
+
       font-size: 0.9rem;
-      color: #777;
+      color: $neutral-color;
 
       span {
-        font-weight: bold;
-        letter-spacing: 1.5px;
-        font-size: 1.2rem;
+        letter-spacing: rem(1.5);
+        font-size: rem(22);
+        color: $primary-color;
       }
     }
     
     &__content {
       display: flex;
       flex-direction: column;
-      gap: 5px;
+      gap: rem(5);
     }
 }
