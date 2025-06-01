@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import MyApp from './_app';
+import MyApp from './_app.page';
 import type { AppProps } from 'next/app';
 
 describe('MyApp', () => {
