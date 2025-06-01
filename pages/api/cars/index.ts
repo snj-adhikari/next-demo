@@ -10,8 +10,9 @@ const carsHandler = (_req: NextApiRequest, res: NextApiResponse) => {
       return res.status(200).json(sampleUserData);
     }, 4000);
     
-  } catch (err: any) {
-    res.status(500).json({ statusCode: 500, message: err.message });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err);
+    res.status(500).json({ statusCode: 500, message });
   }
 }
 

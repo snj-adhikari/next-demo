@@ -1,67 +1,65 @@
-
 @use "sass:map";
 
 $breakpoints: (
-	mobile: $mobile-breakpoint,
-	tablet: $tablet-breakpoint,
-	desktop: $desktop-breakpoint,
-	large-desktop: $large-desktop-breakpoint
+  mobile: $mobile-breakpoint,
+  tablet: $tablet-breakpoint,
+  desktop: $desktop-breakpoint,
+  large-desktop: $large-desktop-breakpoint
 );
 
 $breakpoints: (
-	mobile: $mobile-breakpoint,
-	tablet: $tablet-breakpoint,
-	desktop: $desktop-breakpoint,
-	large-desktop: $large-desktop-breakpoint
+  mobile: $mobile-breakpoint,
+  tablet: $tablet-breakpoint,
+  desktop: $desktop-breakpoint,
+  large-desktop: $large-desktop-breakpoint
 );
 
 @mixin responsive-breakpoint($breakpoint, $option: "max") {
-	/* Determine the breakpoint value (predefined or custom) */
-	$breakpoint-value: if(map.has-key($breakpoints, $breakpoint), map.get($breakpoints, $breakpoint), $breakpoint);
+  /* Determine the breakpoint value (predefined or custom) */
+  $breakpoint-value: if(map.has-key($breakpoints, $breakpoint), map.get($breakpoints, $breakpoint), $breakpoint);
 
-	/* Generate media query based on the option */
-	@if $option == "max" {
+  /* Generate media query based on the option */
+  @if $option == "max" {
 
-		@media (max-width: $breakpoint-value) {
-			@content;
-		}
-	} @else if $option == "min" {
+    @media (max-width: #{$breakpoint-value}) {
+      @content;
+    }
 
-		@media (min-width: $breakpoint-value) {
-			@content;
-		}
-	} @else {
+  } @else if $option == "min" {
 
-		@error "Invalid option value: #{$option}. Please use 'max' or 'min'.";
-	}
+    @media (min-width: #{$breakpoint-value}) {
+      @content;
+    }
+
+  } @else {
+    @error "Invalid option value: #{$option}. Please use 'max' or 'min'.";
+  }
 }
-
 
 @mixin mobile-only {
 
-	@include responsive-breakpoint(mobile, "max") {
-		@content;
-	}
+  @include responsive-breakpoint(mobile, "max") {
+    @content;
+  }
 }
 
 @mixin desktop-only {
 
-	@include responsive-breakpoint(desktop, "min") {
-		@content;
-	}
+  @include responsive-breakpoint(desktop, "min") {
+    @content;
+  }
 }
 
 @mixin tablet-and-desktop {
 
-	@include responsive-breakpoint(mobile, "min") {
-		@content;
-	}
+  @include responsive-breakpoint(mobile, "min") {
+    @content;
+  }
 }
 
 @mixin mobile-and-tablet {
 
-	@include responsive-breakpoint(tablet, "max") {
-		@content;
-	}
+  @include responsive-breakpoint(tablet, "max") {
+    @content;
+  }
 }
-

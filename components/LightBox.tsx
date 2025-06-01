@@ -38,25 +38,27 @@ const Lightbox: React.FC<LightboxProps> = ({ images, alt }) => {
     return null;
   }
 
+  const lightboxClassName = 'lightbox';
+
   return (
-    <div className={styles.lightbox__container}>
+    <div className={styles[lightboxClassName + '__container']}>
       <img
         src={images[0]}
         alt={alt}
-        className={styles.lightbox__thumbnail}
+        className={styles[lightboxClassName + '__thumbnail']}
         onClick={openLightbox}
       />
 
       {isOpen && (
-        <div className={styles.lightbox__overlay} onClick={closeLightbox}>
-          <div className={styles.lightbox__content} onClick={(e) => e.stopPropagation()}>
-            <button className={styles.lightbox__closeButton} onClick={closeLightbox}>
+        <div className={styles[lightboxClassName + '__overlay']} onClick={closeLightbox}>
+          <div className={styles[lightboxClassName + '__content']} onClick={(e) => e.stopPropagation()}>
+            <button className={styles[lightboxClassName + '__close-button']} onClick={closeLightbox}>
               &times;
             </button>
 
             {hasMultipleImages && (
               <button
-                className={`${styles.lightbox__prevButton} ${isFirstImage ? styles.lightbox__prevButton_hidden : ''}`}
+                className={`${styles[lightboxClassName + '__prev-button']} ${isFirstImage ? styles[lightboxClassName + '__prev-button_hidden'] : ''}`}
                 onClick={prevImage}
                 disabled={isFirstImage}
               >
@@ -67,13 +69,13 @@ const Lightbox: React.FC<LightboxProps> = ({ images, alt }) => {
             <img
               src={images[currentIndex]}
               alt={alt}
-              className={styles.lightbox__image}
+              className={styles[lightboxClassName + '__image']}
               data-testid="lightbox-image"
             />
 
             {hasMultipleImages && (
               <button
-                className={`${styles.lightbox__nextButton} ${isLastImage ? styles.lightbox__nextButton_hidden : ''}`}
+                className={`${styles[lightboxClassName + '__next-button']} ${isLastImage ? styles[lightboxClassName + '__next-button--hidden'] : ''}`}
                 onClick={nextImage}
                 disabled={isLastImage}
               >
@@ -82,13 +84,13 @@ const Lightbox: React.FC<LightboxProps> = ({ images, alt }) => {
             )}
 
             {hasMultipleImages && (
-              <div className={styles.lightbox__thumbnails}>
+              <div className={styles[lightboxClassName + '__thumbnails']}>
                 {images.map((image, index) => (
                   <img
                     key={index}
                     src={image}
                     alt={`${alt} - Thumbnail ${index + 1}`}
-                    className={`${styles.lightbox__thumbnail_small} ${index === currentIndex ? styles.lightbox__thumbnail_active : ''}`}
+                    className={`${styles[lightboxClassName + '__thumbnail--small']} ${index === currentIndex ? styles[lightboxClassName + '__thumbnail--active'] : ''}`}
                     onClick={() => selectImage(index)}
                   />
                 ))}

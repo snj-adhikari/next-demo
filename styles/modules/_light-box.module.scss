@@ -49,7 +49,7 @@
     gap: rem(5); // Add gap between thumbnails
   }
 
-  &__thumbnail_small {
+  &__thumbnail--small {
     width: rem(75);
     height: rem(75);
     object-fit: cover;
@@ -61,14 +61,40 @@
     }
   }
 
-  &__thumbnail_active {
+  &__thumbnail--active {
     border-color: $white-color;
   }
 
+  &__close-button {
+    right: rem(10);
+    top: rem(10);
+  }
 
-  &__closeButton,
-  &__prevButton,
-  &__nextButton {
+  &__prev-button {
+    left: rem(10);
+
+    &--hidden {
+      visibility: hidden;
+    }
+  }
+
+  &__next-button {
+    right: rem(10);
+
+
+    &--hidden {
+      visibility: hidden;
+    }
+  }
+
+  &__prev-button, &__next-button {
+    top: 45%;
+    transform: translateY(-45%);
+  }
+
+  &__close-button,
+  &__prev-button,
+  &__next-button {
     position: absolute;
     background: none;
     border: none;
@@ -84,30 +110,5 @@
     }
   }
 
-  &__closeButton {
-    right: rem(10);
-    top: rem(10);
-  }
 
-  &__prevButton, &__nextButton {
-    top: 45%;
-    transform: translateY(-45%);
-  }
-
-  &__prevButton {
-    left: rem(10);
-
-    &_hidden {
-      visibility: hidden;
-    }
-  }
-
-  &__nextButton {
-    right: rem(10);
-
-
-    &_hidden {
-      visibility: hidden;
-    }
-  }
 }

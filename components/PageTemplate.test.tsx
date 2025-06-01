@@ -1,17 +1,18 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import PageTemplate from './PageTemplate';
+import { Car, PageData } from '../interfaces';
 
 // Mock the PageInfo component
 jest.mock('./PageInfo', () => {
-  return function MockPageInfo(props: any) {
+  return function MockPageInfo(props: {pageInfo: PageData }) {
     return <div data-testid="mock-page-info">Mock PageInfo: {props.pageInfo?.title ?? ''}</div>;
   };
 });
 
 // Mock the CarList component
 jest.mock('./CarList', () => {
-  return function MockCarList(props: any) {
+  return function MockCarList(props: { cars?: Car[] }) {
     return <div data-testid="mock-car-list">Mock CarList: {props.cars?.length ?? 0} cars</div>;
   };
 });

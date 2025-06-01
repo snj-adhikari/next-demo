@@ -34,6 +34,7 @@ describe('carsHandler', () => {
       jest.doMock('../../../utils/sample-data', () => ({
         sampleUserData: null, // non-array value triggers the error
       }));
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
       const { default: carsHandlerWithMockData } = require('./index');
       const reqMock = {} as NextApiRequest;
       const resMock = {

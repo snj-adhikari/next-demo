@@ -1,4 +1,5 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import React from 'react';
+import { render, screen } from '@testing-library/react';
 import WithServerSideProps, { getServerSideProps } from './index'; // Adjust the path as needed
 import { Car, PageData } from '../../interfaces/index'; // Adjust the path as needed
 import '@testing-library/jest-dom';
@@ -7,20 +8,24 @@ import { GetServerSidePropsContext } from 'next';
 // Mock the Layout and PageTemplate components to simplify testing the main component's logic
 // We're focusing on the data flow into WithServerSideProps, not the rendering of its children.
 jest.mock('../../components/Layout', () => {
-  return ({ children, title }: { children: React.ReactNode; title: string }) => (
-    <div data-testid="mock-layout" data-title={title}>
-      {children}
-    </div>
-  );
+    const MockLayout = ({ children, title }: { children: React.ReactNode; title: string }) => (
+      <div data-testid="mock-layout" data-title={title}>
+        {children}
+      </div>
+    );
+    MockLayout.displayName = 'MockLayout';
+    return MockLayout;
 });
 
 jest.mock('../../components/PageTemplate', () => {
-  return ({ cars, pageInfo }: { cars: Car[]; pageInfo: PageData }) => (
-    <div data-testid="mock-page-template">
-      <h2 data-testid="page-template-title">{pageInfo?.title}</h2>
-      <div data-testid="page-template-cars">{cars.length} cars</div>
-    </div>
-  );
+    const MockPageTemplate = ({ cars, pageInfo }: { cars: Car[]; pageInfo: PageData }) => (
+      <div data-testid="mock-page-template">
+        <h2 data-testid="page-template-title">{pageInfo?.title}</h2>
+        <div data-testid="page-template-cars">{cars.length} cars</div>
+      </div>
+    );
+    MockPageTemplate.displayName = 'MockPageTemplate';
+    return MockPageTemplate;
 });
 
 // Mock the sortCarsByFamilies helper since its internal logic is not the focus of this test

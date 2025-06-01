@@ -36,18 +36,3 @@ $htmlFontSize: 16;
 	@return $remValue;
 }
 
-/*
- * asset()
- * Returns path to file inside of the assets folder.
- * Should not include trailing slash
- *
- * Usage:
- * background-image: asset( "svg/icons/facebook.svg" );
- * src: asset("font/open-sans.woff2") format("woff2");
- */
-
-@function asset($file) {
-
-	// The path should be relative to the `dist/` folder.
-	@return url("../public/" + $file);
-}

@@ -9,8 +9,9 @@ interface PageTemplateProps {
   cars?: Car[];
 }
 const PageTemplate: React.FC<PageTemplateProps> = ({ pageInfo, cars }) => {
+  const pageTemplateClassName = 'page-template';
   return (
-    <div className={styles.pageTemplate}>
+    <div className={styles[pageTemplateClassName]}>
       <PageInfo pageInfo={pageInfo} />
       <CarList cars={cars} />
     </div>

@@ -1,10 +1,11 @@
-.carList {
+.car-list {
   /* if want to use a grid layout, uncomment the following
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: rem(20);
   */
-   /* Using multi‑column layout for masonry */
+
+  /* Using multi‑column layout for masonry */
   column-count: 3;
   column-gap: rem(20);
 
@@ -17,7 +18,7 @@
     margin-block-end: rem(20); /* Space between makes */
   }
 
-  &__makeTitle {
+  &__make-title {
     @include margin-bottom(1.2);
     @include padding-inline(0.4);
     @include padding-block(1);

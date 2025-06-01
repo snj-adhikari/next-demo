@@ -1,3 +1,4 @@
+import React from 'react';
 import { render, screen } from '@testing-library/react';
 import MyApp from './_app';
 import type { AppProps } from 'next/app';

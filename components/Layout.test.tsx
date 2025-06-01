@@ -2,22 +2,17 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import Layout from './Layout';
 import { useRouter } from 'next/router';
-import Head from 'next/head';
 
 jest.mock('next/router', () => ({
     useRouter: jest.fn(),
 }));
 
 const MockHead = ({ children }: any) => {
-    if (Array.isArray(children)) {
-        children.forEach((child: any) => {
-            if (child && child.type === 'title') {
-                document.title = child.props.children;
-            }
-        });
-    } else if (children && children.type === 'title') {
-        document.title = children.props.children;
-    }
+    React.Children.forEach(children, child => {
+        if (React.isValidElement(child) && child.type === 'title') {
+            document.title = (child as React.ReactElement).props.children;
+        }
+    });
     return <>{children}</>;
 };
 

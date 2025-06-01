@@ -1,4 +1,5 @@
-import { GetServerSideProps, GetServerSidePropsContext } from 'next'
+import React from 'react';
+import { GetServerSideProps } from 'next'
 import { Car, PageData } from '../../interfaces'
 import Layout from '../../components/Layout'
 import PageTemplate from '../../components/PageTemplate'
@@ -19,7 +20,7 @@ const WithServerSideProps = ({ cars, pageInfo, carsUri }: Props) => {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async (ctx: GetServerSidePropsContext) => {
+export const getServerSideProps: GetServerSideProps = async () => {
   try {
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
     const carsResponse = await fetch(`${baseUrl}/api/cars`);

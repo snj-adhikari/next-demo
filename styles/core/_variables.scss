@@ -4,41 +4,41 @@ $base-font-size: 16px;
 
 
 // Colors
-$primary-color: var(--color--primary);
-$secondary-color:var(--color--secondary);
-$success-color: var(--color--success);
-$danger-color: var(--color--error);
-$info-color: var(--color--info);
-$warning-color: var(--color--warning);
-$light-color: var(--color--light);
-$neutral-color: var(--color--neutral);
-$white-color: var(--color--white);
+$primary-color: var(--color-primary);
+$secondary-color:var(--color-secondary);
+$success-color: var(--color-success);
+$danger-color: var(--color-error);
+$info-color: var(--color-info);
+$warning-color: var(--color-warning);
+$light-color: var(--color-light);
+$neutral-color: var(--color-neutral);
+$white-color: var(--color-white);
 
-$neutral-grey-color: var(--color--neutral-grey);
-$light-grey-color: var(--color--light-grey);
+$neutral-grey-color: var(--color-neutral-grey);
+$light-grey-color: var(--color-light-grey);
 
-$overlay-color: var(--color--overlay);
+$overlay-color: var(--color-overlay);
 
 
-// Express font size variables :) - default one  for reference.
-// --font-size--xs: 0.75rem;
-// --font-size--s: 0.875rem;
-// --font-size--m: 1rem;
-// --font-size--l: 1.125rem;
-// --font-size--xl: 1.5rem;
-// --font-size--2xl: 2rem;
-// --font-size--3xl: 2.25rem;
-// --font-size--4xl: 3rem;
-// --font-size--5xl: 4rem;
-$font-size-xs: var(--font-size--xs);
-$font-size-s: var(--font-size--s);
-$font-size-m: var(--font-size--m);
-$font-size-l: var(--font-size--l);
-$font-size-xl: var(--font-size--xl);
-$font-size-2xl: var(--font-size--2xl);
-$font-size-3xl: var(--font-size--3xl);
-$font-size-4xl: var(--font-size--4xl);
-$font-size-5xl: var(--font-size--5xl);
+// App font size variables :) - default one  for reference.
+// --font-size-xs: 0.75rem;
+// --font-size-s: 0.875rem;
+// --font-size-m: 1rem;
+// --font-size-l: 1.125rem;
+// --font-size-xl: 1.5rem;
+// --font-size-2xl: 2rem;
+// --font-size-3xl: 2.25rem;
+// --font-size-4xl: 3rem;
+// --font-size-5xl: 4rem;
+$font-size-xs: var(--font-size-xs);
+$font-size-s: var(--font-size-s);
+$font-size-m: var(--font-size-m);
+$font-size-l: var(--font-size-l);
+$font-size-xl: var(--font-size-xl);
+$font-size-2xl: var(--font-size-2xl);
+$font-size-3xl: var(--font-size-3xl);
+$font-size-4xl: var(--font-size-4xl);
+$font-size-5xl: var(--font-size-5xl);
 
 
 // Other Variables
