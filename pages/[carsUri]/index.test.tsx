@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import WithServerSideProps, { getServerSideProps } from './index'; // Adjust the path as needed
+import WithServerSideProps, { getServerSideProps } from './index.page'; // Adjust the path as needed
 import { Car, PageData } from '../../interfaces/index'; // Adjust the path as needed
 import '@testing-library/jest-dom';
 import { GetServerSidePropsContext } from 'next';

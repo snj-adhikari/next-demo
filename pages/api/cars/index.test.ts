@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import carsHandler from './index';
+import carsHandler from './index.page';
 import { sampleUserData } from '../../../utils/sample-data';
 
 // Use fake timers to simulate the setTimeout delay
@@ -35,7 +35,7 @@ describe('carsHandler', () => {
         sampleUserData: null, // non-array value triggers the error
       }));
       // eslint-disable-next-line @typescript-eslint/no-require-imports
-      const { default: carsHandlerWithMockData } = require('./index');
+      const { default: carsHandlerWithMockData } = require('./index.page');
       const reqMock = {} as NextApiRequest;
       const resMock = {
         status: jest.fn().mockReturnThis(),
