@@ -14,6 +14,10 @@
     "format": "npm-run-all --parallel format:*",
     "type-check": "tsc"
   },
+  "engines": {
+    "node": ">=20",
+    "npm": ">=8"
+  },
   "dependencies": {
     "next": "^15.3.3",
     "nprogress": "^0.2.0",
