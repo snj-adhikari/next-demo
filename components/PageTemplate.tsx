@@ -8,7 +8,7 @@ interface PageTemplateProps {
   pageInfo?: PageData;
   cars?: Car[];
 }
-export const PageTemplate: React.FC<PageTemplateProps> = ({ pageInfo, cars }) => {
+const PageTemplate: React.FC<PageTemplateProps> = ({ pageInfo, cars }) => {
   return (
     <div className={styles.pageTemplate}>
       <PageInfo pageInfo={pageInfo} />
@@ -16,3 +16,5 @@ export const PageTemplate: React.FC<PageTemplateProps> = ({ pageInfo, cars }) =>
     </div>
   );
 };
+
+export default PageTemplate;

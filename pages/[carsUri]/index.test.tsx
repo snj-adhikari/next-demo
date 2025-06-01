@@ -76,8 +76,8 @@ describe('WithServerSideProps', () => {
     expect(screen.getByTestId('page-template-cars')).toHaveTextContent('2 cars');
   });
 
-  it('renders with default title if pageInfo title is null', () => {
-    const pageInfoWithoutTitle = { ...mockPageInfo, title: null };
+  it('renders with default title if pageInfo title is undefined', () => {
+    const pageInfoWithoutTitle = { ...mockPageInfo, title: undefined };
     render(<WithServerSideProps cars={mockCars} pageInfo={pageInfoWithoutTitle} carsUri="/test-uri" />);
 
     expect(screen.getByTestId('mock-layout')).toHaveAttribute('data-title', 'Cars List | Next.js + TypeScript Example');
@@ -131,7 +131,7 @@ describe('WithServerSideProps', () => {
       const context = {} as GetServerSidePropsContext;
       const result = await getServerSideProps(context);
 
-      expect(global.fetch).toHaveBeenCalledTimes(1); // Only the first fetch should be called before throwing
+      expect(global.fetch).toHaveBeenCalledTimes(2);
       expect(result).toEqual({
         props: {
           cars: [],

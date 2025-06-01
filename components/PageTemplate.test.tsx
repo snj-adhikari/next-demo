@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { PageTemplate } from './PageTemplate';
+import PageTemplate from './PageTemplate';
 
 // Mock the PageInfo component
 jest.mock('./PageInfo', () => {

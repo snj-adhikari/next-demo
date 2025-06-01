@@ -1,7 +1,7 @@
 import { GetServerSideProps, GetServerSidePropsContext } from 'next'
 import { Car, PageData } from '../../interfaces'
 import Layout from '../../components/Layout'
-import { PageTemplate } from '../../components/PageTemplate'
+import PageTemplate from '../../components/PageTemplate'
 import { sortCarsByFamilies } from '../../utils/helpers'
 
 type Props = {
