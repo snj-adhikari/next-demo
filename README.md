@@ -9,8 +9,7 @@ This is a really simple project that shows the usage of Next.js with TypeScript.
 
 ## Demo 
 
-Url : (https://next-demo-chi-coral.vercel.app/)[https://next-demo-chi-coral.vercel.app/]
-
+Url : https://next-demo-chi-coral.vercel.app/
 ## Setup Instructions
 
 1. **Clone the repository.**
